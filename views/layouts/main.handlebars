@@ -1,71 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    {{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>  --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="../public/css/style.css" rel="stylesheet">
-    <title>Daily NASA</title>
-  </head>
-  
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  {{!--
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script> --}}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="/css/style.css" rel="stylesheet">
+  <title>Daily NASA</title>
+</head>
 
-    <header>
+<body>
+  <header class="daily-nasa-header">
+    <nav>
+      <div class="title-container">
+        <h1 class="title-text"> Daily Nasa </h1>
+      </div>
 
-      <nav>
-      <h1> Daily Nasa </h1>
-    
-        <!--Navigation-->
+      <!--Navigation-->
       <ul class="navbar-nav mr-auto">
-      
-    
+
+
         {{#if loggedIn }}
-        
-          <li><a href="/">My Library</a></li>
-          <li><button class="logout-btn">Logout</button></li>
+
+        <li><a href="/">My Library</a></li>
+        <li><button class="logout-btn">Logout</button></li>
 
 
         {{else}}
 
         <li class="nav-item"><a href="/">About Us</a> </li>
         <li class="nav-item"><a href="/">Why Daily Nasa?</a></li>
-        <li class="nav-item"> <button id="logout" class="nav-link">Logout</button></li>
+        <li class="nav-item"><button id="login" class="nav-link">Log In</button></li>
 
         {{/if}}
 
-        </nav>
-      </ul>
+    </nav>
+    </ul>
 
-    </header>
+  </header>
 
 
-    <div class="homepage-container">
-      {{{body}}}
-    </div>
+  <div class="homepage-container">
+    {{{body}}}
+  </div>
 
 
   <footer>
-      <div class="card-header">
-      Powered by The Daily NASA team
+    <div class="card-header">
+      Powered by The Daily NASA team ☄️
     </div>
     <div class="card-body">
-      <h5 class="card-title">Created for space lovers</h5>
+      <h5 class="card-title">Created for space lovers 👽</h5>
     </div>
     <div class="card-footer text-muted">
       2022
     </div>
   </footer>
 
-  </body>
+</body>
+
 </html>
