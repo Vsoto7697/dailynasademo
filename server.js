@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('./controllers');
+const routes = require('./controllers/index.js');
 const sequelize = require('./config/connection');
 
 // import sessions library

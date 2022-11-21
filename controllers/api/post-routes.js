@@ -30,6 +30,8 @@ router.get('/', (req, res) => {
     ]
   })
     .then(dbPostData => res.json(dbPostData))
+    let date_favorite = dbPostData.map(post => post.get({ plain:true })); 
+    res.render ('main', { post, loggedIn: req.session.loggedIn })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -74,6 +76,7 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 router.post('/', withAuth, (req, res) => {
   
   Post.create({
